@@ -63,6 +63,7 @@ This represents a setup (max delay) corner, so the analysis focuses on setup tim
 # Practical 
 <details>
  <summary>Project Structure</summary>
+ <details>
  # Set 0ns input delay for inputs in1 and in2 relative to clock 'clk'
 set_input_delay -clock clk 0 {in1 in2}
 

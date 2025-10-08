@@ -63,4 +63,13 @@ This represents a setup (max delay) corner, so the analysis focuses on setup tim
 # Practical 
 <details>
  <summary>Project Structure</summary>
- 
+ # Set 0ns input delay for inputs in1 and in2 relative to clock 'clk'
+set_input_delay -clock clk 0 {in1 in2}
+
+# Report of the timing checks for the design 
+report_checks 
+```
+  
+Note: We used report_checks here because only the slow liberty file (nangate45_slow.lib.gz) is loaded.
+This represents a setup (max delay) corner, so the analysis focuses on setup timing by default.
+

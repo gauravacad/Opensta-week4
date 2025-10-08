@@ -18,10 +18,17 @@ This builds a Docker image named opensta using the provided Ubuntu 22.04 Dockerf
 ![Alt Text](Images/2.jpg)
 
 #### Step 3: Run the OpenSTA Container
-To run a docker container using the OpenSTA image, use the -v option to docker to mount direcories with data to use and -i to run interactively.
+To run a docker container using the OpenSTA image, use the -v option to docker to mount direcories with data to use and -it to run interactively.
 ```bash
-docker run -i -v $HOME:/data opensta
+docker run -it -v $HOME:/data opensta
 ```
+#### Breakdown:
+
+Docker run: Runs a new container.
+-it: Interactive mode with a pseudo-TTY (so you can interact with the shell).
+-v $HOME:/data: Mounts your home directory into the container at /data.
+opensta: The name of the Docker image you're trying to run (OpenSTA in this case).
+
 ![Alt Text](Images/3.png)
 
 You now have OpenSTA installed and running inside a Docker container. After successful installation, you will see the % prompt—this indicates that the OpenSTA interactive shell is ready for use.

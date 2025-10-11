@@ -666,7 +666,8 @@ This report summarises the **setup and hold timing performance** across multiple
 ### Heatmap 
 In STA, a heatmap is used to visualize the timing slack of different paths under various conditions (PVT corners, clock domains, or corners vs cells). Each cell of the heatmap represents the slack of a particular path under a specific corner.
 
-![Heatmap](Screenshots/sta_min_slack_heatmap.png)
+<img width="592" height="734" alt="image" src="https://github.com/user-attachments/assets/fb7bbc71-0568-41ca-8fa6-fc9b63984a0f" />
+
 
 **Inference**
 - Green → Worst slack (more negative or closer to violation)
@@ -675,7 +676,8 @@ In STA, a heatmap is used to visualize the timing slack of different paths under
 
 1. **Worst Max Slack Across corners**
 
-![Worst max slack](Screenshots/wms.png)
+<img width="1454" height="904" alt="image" src="https://github.com/user-attachments/assets/a2ed89aa-1858-4371-9744-a484d4e3e977" />
+
 
 **Observation**
 - The Setup Slack values for most corners are positive, indicating timing is met for those corners.

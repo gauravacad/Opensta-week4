@@ -687,7 +687,7 @@ In STA, a heatmap is used to visualize the timing slack of different paths under
 
 2. **Worst Min Slack Across Corners**
 
-![Worst min slack](Screenshots/wmins.jpg)
+<img width="1457" height="904" alt="image" src="https://github.com/user-attachments/assets/0a13db38-8855-4a02-8896-24cc6b2ec234" />
 
 **Observation**
 - The Hold Slack values for most corners are positive, indicating no hold violations for those corners.
@@ -697,7 +697,9 @@ In STA, a heatmap is used to visualize the timing slack of different paths under
 
 3. **Worst Negative Slack Across Corners**
 
-![Worst negative slack](Screenshots/wns_chart.jpg)
+<img width="1448" height="836" alt="image" src="https://github.com/user-attachments/assets/803051e3-e9a9-4707-9649-22931a3d2541" />
+
+
 
 **Observation**
 - Some corners have negative setup slack, indicating setup timing violations.
@@ -706,7 +708,8 @@ In STA, a heatmap is used to visualize the timing slack of different paths under
 
 4. **Total Negative Slack Across Corners**
 
-![Total negative slack](Screenshots/tns_chart.jpg)
+<img width="1441" height="840" alt="image" src="https://github.com/user-attachments/assets/1281071e-a5e7-46b9-8805-6f894a76e87c" />
+
 
 **Observation**
 - Total Negative Slack aggregates all negative setup slacks.

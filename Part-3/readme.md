@@ -202,6 +202,24 @@ tarrival_min = tclk_q + tcomb_min
 tarrival_min = 0.00 ns
 ```
 
+**Data Required Time (trequired_hold):**  
+```bash
+trequired_hold = thold
+trequired_hold = 0.01 ns
+```
+**Slack Calculation**
+```bash
+Slackhold = tarrival_min − trequired_hold
+Slackhold = 0.00 − 0.01
+Slackhold = −0.01 ns (VIOLATED)
+```
+### Observation
+- The **hold slack is negative (−0.01 ns)** → **Hold timing is violated**.  
+- This indicates that data is arriving **too early** at the capture flip-flop before it becomes stable for the next clock edge.  
+- The path therefore **fails the hold requirement**, causing a potential data corruption risk.
+
+
+
 **Screenshot** : The timing report were analysed and Verified.
 
 <img width="750" height="252" alt="image" src="https://github.com/user-attachments/assets/a7deaf73-f131-42a2-91b9-17fc80a71ce8" />
@@ -267,20 +285,3 @@ report_checks -path_delay min
 <img width="820" height="637" alt="reportspef2" src="https://github.com/user-attachments/assets/3ada4f75-3fff-46e7-baf1-60e50fac7aa9" />
 
 ---
-
-**Data Required Time (trequired_hold):**  
-```bash
-trequired_hold = thold
-trequired_hold = 0.01 ns
-```
-**Slack Calculation**
-```bash
-Slackhold = tarrival_min − trequired_hold
-Slackhold = 0.00 − 0.01
-Slackhold = −0.01 ns (VIOLATED)
-```
-### Observation
-- The **hold slack is negative (−0.01 ns)** → **Hold timing is violated**.  
-- This indicates that data is arriving **too early** at the capture flip-flop before it becomes stable for the next clock edge.  
-- The path therefore **fails the hold requirement**, causing a potential data corruption risk.
-

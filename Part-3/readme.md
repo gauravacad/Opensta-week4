@@ -285,3 +285,17 @@ report_checks -path_delay min
 <img width="820" height="637" alt="reportspef2" src="https://github.com/user-attachments/assets/3ada4f75-3fff-46e7-baf1-60e50fac7aa9" />
 
 ---
+
+### Observation
+
+- Including **SPEF parasitics** significantly increases the **delays** along the data path.  
+- **Data arrival time** at `r3/D` increases from **0.41 ns → 7.92 ns**.  
+- **Slack decreases** from **9.43 ns → 1.52 ns**, though it still meets the setup requirement.  
+- The increase in delay is mainly due to **interconnect capacitance and resistance** captured in the SPEF file.  
+- This highlights the importance of considering **post-layout parasitics** for accurate timing analysis.
+---
+
+## Note:
+- The `Timing analysis of VSDBabySoc` and `Multi-Corner PVT` analysis are done in [View VSDBabySoC Timing Analysis](VSDBabySoC_Timing_Analysis.md)
+
+---

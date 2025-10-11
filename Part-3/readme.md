@@ -296,6 +296,36 @@ report_checks -path_delay min
 ---
 
 ## Note:
-- The `Timing analysis of VSDBabySoc` and `Multi-Corner PVT` analysis are done in [View VSDBabySoC Timing Analysis](VSDBabySoC_Timing_Analysis.md)
+- The `Timing analysis of VSDBabySoc` and `Multi-Corner PVT` analysis are done in VSDBabySoC_Timing_Analysis.md
 
 ---
+
+
+# Timing Analysis of VSDBabySoc
+---
+## Steps to do Timing analysis of VSDBabySoC
+
+```bash
+cd Desktop/SoC/VSDBabySoC
+sta
+
+# Load Liberty Libraries (standard cell + IPs)
+read_liberty  ./src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty  ./src/lib/avsdpll.lib
+read_liberty ./src/lib/avsddac.lib
+
+# Read Synthesized Netlist
+read_verilog ./src/module/vsdbabysoc.synth.v
+
+# Link the Top-Level Design
+link_design vsdbabysoc
+
+# Apply SDC Constraints
+read_sdc ./src/sdc/vsdbabysoc_synthesis.sdc
+ 
+#SDC Constraints
+set_units -time ns
+create_clock [get_pins {pll/CLK}] -name clk -period 11
+
+# Generate Timing Report (by default max path)
+report_checks

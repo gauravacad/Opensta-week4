@@ -296,7 +296,7 @@ report_checks -path_delay min
 ---
 
 ## Note:
-- The `Timing analysis of VSDBabySoc` and `Multi-Corner PVT` analysis are done in VSDBabySoC_Timing_Analysis.md
+- The `Timing analysis of VSDBabySoc` and `Multi-Corner PVT` analysis are done in **VSDBabySoC_Timing_Analysis.md**
 
 ---
 
@@ -329,3 +329,91 @@ create_clock [get_pins {pll/CLK}] -name clk -period 11
 
 # Generate Timing Report (by default max path)
 report_checks
+
+# Generate Timing Report for min path
+report_checks -path_delay min
+```
+**Screenshot**: VSDBabySoC Timing report for max path
+
+<img width="813" height="623" alt="1" src="https://github.com/user-attachments/assets/370dd610-9e13-4d14-a117-3a8277df0184" />
+---
+
+**Screenshot**: VSDBabySoC Timing report for min path
+
+<img width="825" height="705" alt="2" src="https://github.com/user-attachments/assets/e00991ad-a9fe-440a-8bad-dd3d4ea64f08" />
+
+---
+
+ # Multi-PVT Corner Timing Analysis of VSDBabySoC using OpenSTA
+---
+## Multi-PVT Corners in STA
+
+**Definition:**  
+In **Static Timing Analysis (STA)**, **Multi-PVT Corners** refer to evaluating the design under multiple combinations of **Process, Voltage, and Temperature (PVT)** conditions. These corners help ensure that the design **meets timing constraints across all expected operating conditions**.
+
+### Components of PVT:
+
+1. **Process (P):**  
+   - Variations in manufacturing, e.g., **slow (SS), typical (TT), fast (FF)** transistors.
+   - Accounts for **chip-to-chip variability**.
+
+2. **Voltage (V):**  
+   - Variations in supply voltage, e.g., **nominal, high, low**.
+   - Ensures timing is robust against **power supply fluctuations**.
+
+3. **Temperature (T):**  
+   - Variations in operating temperature, e.g., **-40°C, 25°C, 125°C**.
+   - Models the effect of **thermal conditions** on transistor speed.
+
+### Purpose of Multi-PVT Corners:
+
+- STA at a **single corner** is insufficient for real-world conditions.  
+- Multi-PVT analysis ensures the **design meets timing and functional requirements** under all expected scenarios:  
+  - **Fast Process + High Voltage + Low Temperature** → fastest circuits, check **hold violations**.  
+  - **Slow Process + Low Voltage + High Temperature** → slowest circuits, check **setup violations**.  
+
+  **Example Scenarios:**
+
+- **Fast Corner:** FF transistors at **-40 °C, 1.95 V** → circuits are faster; checks **hold violations** (data may arrive too early).  
+- **Slow Corner:** SS transistors at **100 °C, 1.40 V** → circuits are slower; checks **setup violations** (data may arrive too late). 
+---
+## Timing Libraries for Multi-PVT Analysis
+
+The timing libraries required for this analysis can be downloaded from the **SkyWater PDK**:
+
+- **SkyWater PDK – sky130_fd_sc_hd Timing Libraries**  
+  - These libraries provide **process-, voltage-, and temperature-specific timing models** needed for accurate STA.  
+  - You can download them from the official [SkyWater PDK repository](https://github.com/google/skywater-pdk) or the timing library package link provided by the PDK.
+---
+ 
+## Using the Multi-PVT TCL Script for STA
+
+We are going to use the `multi_pvt_corners.tcl` script to **automate Static Timing Analysis (STA) across multiple PVT corners**. This allows us to verify that the design meets timing constraints under all **process, voltage, and temperature conditions** without manually switching libraries or rerunning analyses.
+
+### Steps Performed by the Script:
+
+1. **Load PVT-specific timing libraries**  
+   - Example: `sky130_fd_sc_hd__ss_100C_1v40.lib` for a **slow-slow, high-temperature, low-voltage** corner.  
+
+2. **Link the synthesized netlist**  
+   - Ensures the same RTL design is used for all corners.  
+
+3. **Apply SDC constraints**  
+   - Clocks, input/output delays, and timing exceptions are applied consistently for each corner.  
+
+4. **Run timing checks**  
+   - Includes **setup, hold, worst negative slack (WNS), total negative slack (TNS)** for each corner.  
+
+5. **Save detailed reports**  
+   - Generates a **separate report for each PVT corner** under `./sta_outputs/` for analysis.  
+
+### Benefits:
+
+- Provides **comprehensive timing validation** across all operating conditions.  
+- Automates repetitive STA tasks, saving **time and effort**.  
+- Identifies **worst-case paths** for setup and hold, ensuring reliable chip operation.  
+
+---
+
+
+

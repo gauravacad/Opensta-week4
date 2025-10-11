@@ -569,6 +569,12 @@ source multi_pvt_corners.tcl
 <img width="823" height="662" alt="image" src="https://github.com/user-attachments/assets/7a2c7fb4-458d-4bd0-9124-130167256587" />
 
 ---
+**Screenshot:** Completed and saved 
+
+<img width="820" height="699" alt="image" src="https://github.com/user-attachments/assets/3062b5da-46a4-425f-b92a-1e16c98344e4" />
+
+---
+
 ## STA Output
 - After successfull analysis of `multi pvt corners`, it produces 4 output files.
 They are.
@@ -578,24 +584,32 @@ sta_wns.txt
 sta_worst_max_slack.txt
 sta_worst_min_slack.txt
 ```
+**Screenshot:** Showing the output directory Structure 
+
+<img width="815" height="464" alt="image" src="https://github.com/user-attachments/assets/0a6892d6-9361-4d01-8c0f-ab6ead98b440" />
+
+---
 **Screenshot of sta_worst_max_slack.txt**
 
-![Worst slack max](Screenshots/worst_slack_max.jpg)
+<img width="823" height="704" alt="image" src="https://github.com/user-attachments/assets/880c26db-66f3-4946-a00a-f10acf77e9fe" />
+
 
 ---
 **Screenshot of sta_worst_min_slack.txt**
 
-![Worst slack min](Screenshots/worst_slack_min.jpg)
+<img width="825" height="703" alt="image" src="https://github.com/user-attachments/assets/7c493e8b-3736-4075-a777-09ebab78e7fe" />
+
 
 ---
 **Screenshot of sta_wns.txt**
 
-![wns](Screenshots/wns.jpg)
+<img width="817" height="676" alt="image" src="https://github.com/user-attachments/assets/63a2e530-4a8a-4f05-98c9-a549e2af7398" />
+
 
 ---
 **Screenshot of sta_tns.txt**
 
-![tns](Screenshots/tns.jpg)
+<img width="819" height="676" alt="image" src="https://github.com/user-attachments/assets/e0e55555-e8b8-4575-a790-c426bee0cd63" />
 
 ---
 # Multi-PVT Timing Summary Report

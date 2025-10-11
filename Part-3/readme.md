@@ -218,7 +218,71 @@ Slackhold = −0.01 ns (VIOLATED)
 - This indicates that data is arriving **too early** at the capture flip-flop before it becomes stable for the next clock edge.  
 - The path therefore **fails the hold requirement**, causing a potential data corruption risk.
 
+**Screenshot** : The timing report were analysed and Verified.
+
+<img width="750" height="252" alt="image" src="https://github.com/user-attachments/assets/a7deaf73-f131-42a2-91b9-17fc80a71ce8" />
+
+---
+
+## SPEF-Based Timing Analysis
+
+**Definition:**  
+**SPEF** is a standardized textual file format that provides detailed parasitic information (resistance, capacitance, and sometimes inductance) of a chip’s routing interconnects, which is used for **accurate post-layout timing analysis (STA)**.
+
+### Key Points:
+- Captures **RC parasitics** of nets after placement and routing.  
+- Used by **Static Timing Analysis (STA) tools** to compute **delay, slew, and crosstalk effects**.  
+- Ensures **timing closure** by reflecting realistic interconnect delays.  
+- Comes in two main types:  
+  - **Unit SPEF:** resistances in ohms, capacitances in farads.  
+  - **Scaled SPEF:** values scaled by a factor for readability.  
+
+**Summary:**  
+SPEF bridges the gap between layout parasitics and accurate timing analysis.
+
+---
+### Steps to do SPEF Based Timing Analysis
+```bash
+# Change to the directory containing OpenSTA examples
+cd OpenSTA/examples
+
+# Invoke the OpenSTA tool
+sta
+
+# Load the standard cell timing library (Liberty format)
+read_liberty ./nangate45_slow.lib.gz
+
+# Load the gate-level Verilog netlist for analysis
+read_verilog ./example1.v
+
+# Link the top-level module in the Verilog netlist with the loaded timing library
+link_design top
+
+# Load the parasitic SPEF file for accurate delay calculation
+read_spef ./example1.dspef
+
+# Define a 10 ns clock named 'clk' for signals clk1, clk2, and clk3
+create_clock -name clk -period 10 {clk1 clk2 clk3}
+
+# Set input delay of 0 ns for signals in1 and in2 relative to the clock 'clk'
+set_input_delay -clock clk 0 {in1 in2}
+
+# Generate timing report for max check
+report_checks
+
+# Generate timing report for min check
+report_checks -path_delay min
+```
+**Screenshot** : Terminal output of the tcl script with SPEF Based Max path Check 
+<img width="825" height="760" alt="reportspef" src="https://github.com/user-attachments/assets/f7aff652-bed3-4117-a357-770366764e23" />
 
 
+---
+**Screenshot**: SPEF Based Min path Check still voilated
 
+<img width="820" height="637" alt="reportspef2" src="https://github.com/user-attachments/assets/3ada4f75-3fff-46e7-baf1-60e50fac7aa9" />
+
+ 
+
+ ---
 

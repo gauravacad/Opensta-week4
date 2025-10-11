@@ -736,3 +736,7 @@ In STA, a heatmap is used to visualize the timing slack of different paths under
 - Optimization is needed for critical paths in slow corners: retiming, path restructuring, or clock adjustment.
 - Overall, the design is robust in typical and fast conditions, but slow corners require attention to ensure reliable operation across all PVT scenarios.
 ---
+
+## Final Dashboard
+
+https://claude.ai/public/artifacts/2ee4b18f-446a-4862-864e-5b498bc78922

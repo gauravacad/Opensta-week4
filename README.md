@@ -18,7 +18,7 @@
 - Understood the significance of **SDF (Standard Delay Format)** for accurate timing-based simulations.
 - Observed how **timing delays and gate-level optimizations** influence the design’s output behavior.
 
- 👉 [View Post-Synthesis GLS Report](Part%201%20–%20Post-Synthesis%20GLS/)
+
 
 ---
 
@@ -30,7 +30,6 @@
   - **Clock latency**, **skew**, **jitter**, **timing paths**, **OCV and Its Timing Analysis**
 - Understood how **STA differs from dynamic simulation** and why it’s essential for verifying **timing closure**.
 
-👉 [View STA Fundamentals Report](Part%202%20-%20Fundamentals%20of%20Static%20Timing%20Analysis%20(STA)/)
 
 ---
 
@@ -43,14 +42,13 @@
 - Generated **timing graphs** and evaluated **slack**, **critical paths**, and **timing margins** across multiple PVT corners.
 - Interpreted **WNS (Worst Negative Slack)** and **TNS (Total Negative Slack)** to assess timing quality.
 
-👉 [View OpenSTA Installation & Basic Timing Analysis](Part%203%20–%20Generate%20Timing%20Graphs%20with%20OpenSTA/Timing_Analysis.md)  
-👉 [View VSDBabySoC Timing Analysis Report](Part%203%20–%20Generate%20Timing%20Graphs%20with%20OpenSTA/VSDBabySoC_Timing_Analysis.md)
+
 
 ---
 
-##  Author and Originality
+##  Author
 
-[Author & Declaration](author.md)
+Gaurav Purohit 
 
 ---
 

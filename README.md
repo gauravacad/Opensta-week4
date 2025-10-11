@@ -1,4 +1,4 @@
-# Week 3 - RISC-V SoC Tapeout Journey (Divya Darshan)
+# Week 3 - RISC-V SoC Tapeout Journey 
 ## Gate-Level Simulation & Static Timing Analysis using OpenSTA
 ---
 

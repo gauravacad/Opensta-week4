@@ -478,7 +478,8 @@ foreach lib_file $list_of_lib_files {
     read_verilog ./src/module/vsdbabysoc.synth.v
     link_design vsdbabysoc
     current_design vsdbabysoc
-    read_sdc ./src/sdc/updated_synth.sdc
+    ## we will change this adding the input delay as shown below ##
+    read_sdc ./src/sdc/vsdbabysoc_synthesis.sdc 
 
     # Perform timing checks
     check_setup -verbose
@@ -510,9 +511,14 @@ foreach lib_file $list_of_lib_files {
     incr i
 }
 puts "\n All corners analysed. Reports saved in ./sta_outputs/"
-``` 
+```
+**Screenshot:** All the corners are analysed but the Input delay is missing in the file  `read_sdc ./src/sdc/vsdbabysoc_synthesis.sdc`
+
+<img width="824" height="644" alt="image" src="https://github.com/user-attachments/assets/1feeedf6-905d-44bf-b79a-659a4dd74617" />
+
 ---
-## SDC Constraints For VSDBabySoC
+
+## New updated Input Delay in SDC Constraints For VSDBabySoC
 
 ```bash
 # =============================================================================
@@ -558,6 +564,10 @@ sta
 
 source multi_pvt_corners.tcl
 ```
+**Screenshot:** Showing the updated corner analysis with input delay
+
+<img width="823" height="662" alt="image" src="https://github.com/user-attachments/assets/7a2c7fb4-458d-4bd0-9124-130167256587" />
+
 ---
 ## STA Output
 - After successfull analysis of `multi pvt corners`, it produces 4 output files.

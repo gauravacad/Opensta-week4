@@ -270,9 +270,10 @@ OUT: This is a real datatype wire which can simulate analog values. It is the ou
 
 ## Conclusion
 This process successfully transformed the vsdbabysoc RTL design into a verified, synthesizable gate-level netlist. The debugging journey highlighted the importance of correctly handling IP integration, from Verilog header paths to precise port-matching in hierarchical designs. The identical pre- and post-synthesis simulation results provide high confidence in the netlist to move in the stage. Therefore the , 
-### Final Observation
+
 - The Gate-Level Simulation (GLS) results were found to be functionally equivalent to the RTL simulation results obtained in Week 2.
 - This confirms that synthesis did not introduce any unintended logic changes.
-- Conclusion: GLS output = Functional Simulation output
+### Final Observation
+**GLS output = Functional Simulation output**
 
 

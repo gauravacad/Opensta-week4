@@ -654,17 +654,17 @@ This report summarises the **setup and hold timing performance** across multiple
 
 ---
 
-### Observations
+### Key Observations from our data:
 
 1. 🟢 **FF (Fast-Fast)** and **TT (Typical-Typical)** corners meet setup & hold comfortably.  
 2. 🟢 Hold slacks are positive across all corners — **no hold failures** observed.  
-3. 🔴 **SS (Slow-Slow)** corners show significant setup violations due to **low voltage and high temperature**.  
+3. 🔴 **SS (Slow-Slow)** corners show significant setup violations due to **low voltage and high temperature**. 
 4. 🟢 Classic trade-off observed:  
    - *Fast corners → Hold-critical* (short paths).  
    - *Slow corners → Setup-critical* (long paths).  
-5. Worst setup violation at *ss_n40C_1v28* (−52.9 ns) → severe slowdown under cold/low-voltage.  
+5. Worst setup violation at *ss_n40C_1v28* `the worst WNS at -52.9ns and TNS at -36,775ns`  → severe slowdown under cold/low-voltage.  
 6. Indicates need for *path optimization, retiming, or clock relaxation* to close setup timing at slow corners.  
-
+7. Hold timing (Min Slack) is generally met across all corners
 ---
 
 ### Heatmap 
@@ -725,6 +725,7 @@ In STA, a heatmap is used to visualize the timing slack of different paths under
 - The analysis of hold slack, setup slack, and total negative slack across all process corners reveals that the worst-case timing occurs in the ss_n40C_1v28 corner, with significant setup violations.
 - Hold timing is generally safe across corners. The total negative slack highlights cumulative violations, guiding optimization priorities. 
 - Focus should be on critical paths in the slowest corners to achieve timing closure and reliable operation.
+
 
 ---
 ##  Conclusion

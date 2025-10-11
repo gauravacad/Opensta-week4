@@ -48,7 +48,7 @@
 
 ##  Author
 
-Gaurav Purohit 
+**Gaurav Purohit**
 
 ---
 

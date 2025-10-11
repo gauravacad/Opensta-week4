@@ -643,26 +643,26 @@ This report summarises the **setup and hold timing performance** across multiple
 
 ### Visual Legend: Symbol and Meaning 
 
-🟢 Green = Timing met
-🟡 Yellow = Marginal hold timing (positive slack, but close)
-🔴 Red = Setup violations (negative slack)
+- 🟢 Green = Timing met
+- 🟡 Yellow = Marginal hold timing (positive slack, but close)
+- 🔴 Red = Setup violations (negative slack)
 
 ## Description   
----
-| 🟢    | PASS                    | Slack ≥ 0 ns → Meets timing              |
-| 🔴    | FAILURE                 | Slack ≤ −1 ns → Fails timing             |
----
+
+- | 🟢    | PASS                    | Slack ≥ 0 ns → Meets timing              |
+- | 🔴    | FAILURE                 | Slack ≤ −1 ns → Fails timing             |
+
 ---
 
 ### Observations
 
-1. 🟩 **FF (Fast-Fast)** and **TT (Typical-Typical)** corners meet setup & hold comfortably.  
-2. 🟩 Hold slacks are positive across all corners — **no hold failures** observed.  
-3. 🟥 **SS (Slow-Slow)** corners show significant setup violations due to **low voltage and high temperature**.  
-4. 🟩 Classic trade-off observed:  
+1. 🟢 **FF (Fast-Fast)** and **TT (Typical-Typical)** corners meet setup & hold comfortably.  
+2. 🟢 Hold slacks are positive across all corners — **no hold failures** observed.  
+3. 🔴 **SS (Slow-Slow)** corners show significant setup violations due to **low voltage and high temperature**.  
+4. 🟢 Classic trade-off observed:  
    - *Fast corners → Hold-critical* (short paths).  
    - *Slow corners → Setup-critical* (long paths).  
-5. Worst setup violation at *ss_n40C_1v28* (−51.2061 ns) → severe slowdown under cold/low-voltage.  
+5. Worst setup violation at *ss_n40C_1v28* (−52.9 ns) → severe slowdown under cold/low-voltage.  
 6. Indicates need for *path optimization, retiming, or clock relaxation* to close setup timing at slow corners.  
 
 ---

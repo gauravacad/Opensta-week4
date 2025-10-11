@@ -647,10 +647,11 @@ This report summarises the **setup and hold timing performance** across multiple
 🟡 Yellow = Marginal hold timing (positive slack, but close)
 🔴 Red = Setup violations (negative slack)
 
- Description                               
+## Description   
+---
 | 🟢    | PASS                    | Slack ≥ 0 ns → Meets timing              |
 | 🔴    | FAILURE                 | Slack ≤ −1 ns → Fails timing             |
-
+---
 ---
 
 ### Observations

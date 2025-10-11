@@ -641,12 +641,15 @@ This report summarises the **setup and hold timing performance** across multiple
 
 ---
 
-### Legend
+### Visual Legend: Symbol and Meaning 
 
-| Symbol | Meaning                 | Description                               |
-|:------:|:-----------------------|:-----------------------------------------|
-| 🟩     | PASS                    | Slack ≥ 0 ns → Meets timing              |
-| 🟥     | FAILURE                 | Slack ≤ −1 ns → Fails timing             |
+🟢 Green = Timing met
+🟡 Yellow = Marginal hold timing (positive slack, but close)
+🔴 Red = Setup violations (negative slack)
+
+ Description                               
+| 🟢    | PASS                    | Slack ≥ 0 ns → Meets timing              |
+| 🔴    | FAILURE                 | Slack ≤ −1 ns → Fails timing             |
 
 ---
 

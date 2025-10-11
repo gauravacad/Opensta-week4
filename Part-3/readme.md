@@ -618,26 +618,26 @@ This report summarises the **setup and hold timing performance** across multiple
 
 ---
 
-## Timing Summary Table
+## 📊 Timing Analysis Summary Table
 
-| Library Corner     | Max/Worst Max Slack (Setup) | Min/Worst Min Slack (Hold) | WNS          | TNS          | Observation                     |
-|-------------------|-----------------------------|----------------------------|--------------|--------------|--------------------------------|
-| ff_n40C_1v95      | 🟩 +3.8703                  | 🟩 +0.1875                 | 🟩 0.0000    | 🟩 0.0000    | Strong setup, hold OK          |
-| ff_100C_1v65      | 🟩 +2.2764                  | 🟩 +0.2491                 | 🟩 0.0000    | 🟩 0.0000    | Setup OK, hold OK              |
-| ff_100C_1v95      | 🟩 +3.7138                  | 🟩 +0.1960                 | 🟩 0.0000    | 🟩 0.0000    | Excellent setup, hold OK       |
-| ff_n40C_1v56      | 🟩 +0.8214                  | 🟩 +0.2915                 | 🟩 0.0000    | 🟩 0.0000    | OK setup, good hold margin     |
-| ff_n40C_1v65      | 🟩 +1.8597                  | 🟩 +0.2551                 | 🟩 0.0000    | 🟩 0.0000    | Setup good, hold OK            |
-| ff_n40C_1v76      | 🟩 +2.7707                  | 🟩 +0.2243                 | 🟩 0.0000    | 🟩 0.0000    | Fast corner stable             |
-| ss_100C_1v40      | 🟥 −13.6381                 | 🟩 +0.9053                 | 🟥 −13.6381  | 🟥 Large     | Major setup fail               |
-| ss_100C_1v60      | 🟥 −6.7098                  | 🟩 +0.6420                 | 🟥 −6.7098   | 🟥 Large     | Setup fail                     |
-| ss_n40C_1v28      | 🟥 −51.2061                 | 🟩 +1.8296                 | 🟥 −51.2061  | 🟥 Severe    | Severe setup fail              |
-| ss_n40C_1v35      | 🟥 −32.0887                 | 🟩 +1.3475                 | 🟥 −32.0887  | 🟥 Large     | Setup fail                     |
-| ss_n40C_1v40      | 🟥 −23.8290                 | 🟩 +1.1249                 | 🟥 −23.8290  | 🟥 Large     | Setup fail                     |
-| ss_n40C_1v44      | 🟥 −19.2010                 | 🟩 +0.9909                 | 🟥 −19.2010  | 🟥 Large     | Setup fail                     |
-| ss_n40C_1v76      | 🟥 −4.4548                  | 🟩 +0.5038                 | 🟥 −4.4548   | 🟥 Large     | Setup fail                     |
-| ss_n40C_1v60      | 🟥 −9.7051                  | 🟩 +0.6628                 | 🟥 −9.7051   | 🟥 Large     | Setup fail                     |
-| tt_025C_1v80      | 🟩 +0.8595                  | 🟩 +0.3096                 | 🟩 0.0000    | 🟩 0.0000    | Typical corner OK              |
-| tt_100C_1v80      | 🟩 +0.9354                  | 🟩 +0.3145                 | 🟩 0.0000    | 🟩 0.0000    | Typical-hot OK                 |
+| Library Corner     | Max/Worst Max Slack (Setup) | Min/Worst Min Slack (Hold) | WNS       | TNS         | Observation                  |
+|--------------------|-----------------------------|-----------------------------|-----------|-------------|------------------------------|
+| ff_n40C_1v95       | 4.0421                      | 0.1875                      | 0.0000    | 0.0000      | 🟡 <span style="color:#DAA520;">Hold timing marginal</span>       |
+| ff_100C_1v65       | 2.4466                      | 0.2491                      | 0.0000    | 0.0000      | 🟡 <span style="color:#DAA520;">Hold timing marginal</span>       |
+| ff_100C_1v95       | 3.8366                      | 0.1960                      | 0.0000    | 0.0000      | 🟡 <span style="color:#DAA520;">Hold timing marginal</span>       |
+| ff_n40C_1v56       | 1.1270                      | 0.2915                      | 0.0000    | 0.0000      | 🟡 <span style="color:#DAA520;">Hold timing marginal</span>       |
+| ff_n40C_1v65       | 2.1219                      | 0.2551                      | 0.0000    | 0.0000      | 🟡 <span style="color:#DAA520;">Hold timing marginal</span>       |
+| ff_n40C_1v76       | 2.9919                      | 0.2243                      | 0.0000    | 0.0000      | 🟡 <span style="color:#DAA520;">Hold timing marginal</span>       |
+| ss_100C_1v40       | -13.0402                    | 0.9053                      | -13.0402  | -7521.4248  | 🔴 <span style="color:red;">Major setup violations</span>         |
+| ss_100C_1v60       | -6.2777                     | 0.6420                      | -6.2777   | -2909.8362  | 🔴 <span style="color:red;">Setup violations present</span>       |
+| ss_n40C_1v28       | -52.9031                    | 1.8296                      | -52.9031  | -36775.8398 | 🔴 <span style="color:red;">Critical: Setup violations</span>     |
+| ss_n40C_1v35       | -33.1984                    | 1.3475                      | -33.1984  | -23278.9902 | 🔴 <span style="color:red;">Critical: Setup violations</span>     |
+| ss_n40C_1v40       | -24.6564                    | 1.1249                      | -24.6564  | -17170.5898 | 🔴 <span style="color:red;">Critical: Setup violations</span>     |
+| ss_n40C_1v44       | -19.9610                    | 0.9909                      | -19.9610  | -13600.6846 | 🔴 <span style="color:red;">Major setup violations</span>         |
+| ss_n40C_1v76       | -3.9606                     | 0.5038                      | -3.9606   | -1905.4320  | 🔴 <span style="color:red;">Setup violations present</span>       |
+| ss_n40C_1v60       | -9.0172                     | 0.6628                      | -9.0172   | -5181.2949  | 🔴 <span style="color:red;">Setup violations present</span>       |
+| tt_025C_1v80       | 1.1060                      | 0.3096                      | 0.0000    | 0.0000      | 🟢 <span style="color:green;">Timing met</span>                   |
+| tt_100C_1v80       | 1.1452                      | 0.3145                      | 0.0000    | 0.0000      | 🟢 <span style="color:green;">Timing met</span>                   |
 
 ---
 

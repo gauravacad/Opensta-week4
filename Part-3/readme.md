@@ -415,5 +415,44 @@ We are going to use the `multi_pvt_corners.tcl` script to **automate Static Timi
 
 ---
 
+## Script to run Static Timing Analysis for all corners
+
+```bash
+#---------------------------------------------
+#  Multi-corner STA Automation Script (OpenSTA)
+#---------------------------------------------
+
+# Define list of timing libraries (corners)
+set list_of_lib_files {
+    sky130_fd_sc_hd__ff_n40C_1v95.lib
+    sky130_fd_sc_hd__ff_100C_1v65.lib
+    sky130_fd_sc_hd__ff_100C_1v95.lib
+    sky130_fd_sc_hd__ff_n40C_1v56.lib
+    sky130_fd_sc_hd__ff_n40C_1v65.lib
+    sky130_fd_sc_hd__ff_n40C_1v76.lib
+    sky130_fd_sc_hd__ss_100C_1v40.lib
+    sky130_fd_sc_hd__ss_100C_1v60.lib
+    sky130_fd_sc_hd__ss_n40C_1v28.lib
+    sky130_fd_sc_hd__ss_n40C_1v35.lib
+    sky130_fd_sc_hd__ss_n40C_1v40.lib
+    sky130_fd_sc_hd__ss_n40C_1v44.lib
+    sky130_fd_sc_hd__ss_n40C_1v76.lib
+    sky130_fd_sc_hd__ss_n40C_1v60.lib
+    sky130_fd_sc_hd__tt_025C_1v80.lib
+    sky130_fd_sc_hd__tt_100C_1v80.lib
+}
+
+#---------------------------------------------
+#  Load base cell libraries and design files
+#---------------------------------------------
+read_liberty ./src/lib/avsdpll.lib
+read_liberty ./src/lib/avsddac.lib
+
+#---------------------------------------------
+#  Create output folder
+#---------------------------------------------
+file mkdir sta_outputs
+
+
 
 

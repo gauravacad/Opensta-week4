@@ -385,6 +385,16 @@ The timing libraries required for this analysis can be downloaded from the **Sky
   - These libraries provide **process-, voltage-, and temperature-specific timing models** needed for accurate STA.  
   - You can download them from the official [SkyWater PDK repository](https://github.com/google/skywater-pdk) or the timing library package link provided by the PDK.
 ---
+
+``` bash
+## Option 1 - only the timing directory
+
+git clone --no-checkout https://github.com/efabless/skywater-pdk-libs-sky130_fd_sc_hd.git
+cd skywater-pdk-libs-sky130_fd_sc_hd
+git sparse-checkout init --cone
+git sparse-checkout set timing
+git checkout
+```
  
 ## Using the Multi-PVT TCL Script for STA
 
